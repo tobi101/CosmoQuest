@@ -34,4 +34,9 @@ public class Manager : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
+    public void PlaySound(AudioClip audioClip)
+    {
+        GetComponent<AudioSource>().PlayOneShot(audioClip);
+    }
 }

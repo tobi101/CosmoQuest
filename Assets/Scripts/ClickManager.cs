@@ -20,6 +20,8 @@ public class ClickManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     bool isVertical;
     bool isCollision = false;
 
+    AudioSource _audioSource;
+
     public void Start()
     {
         type1 = GameObject.FindGameObjectsWithTag("Type1");
@@ -27,6 +29,8 @@ public class ClickManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         type3 = GameObject.FindGameObjectsWithTag("Type3");
         type_col = GameObject.FindGameObjectsWithTag("Collider");
         endCanvas = GameObject.FindGameObjectWithTag("EndCanvas");
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -75,6 +79,8 @@ public class ClickManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         {
             isVertical = true;
         }
+
+        _audioSource.Play();
     }
 
     Vector2 delta;
