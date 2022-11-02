@@ -5,7 +5,8 @@ public class Manager : MonoBehaviour
 {
     public GameObject[] positions;
     public GameObject[] figures;
-    public int speed;
+
+    public GameObject audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class Manager : MonoBehaviour
 
     public void RestartGame()
     {
+        DontDestroyOnLoad(audioSource);
         SceneManager.LoadScene("GameScene");
     }
 
